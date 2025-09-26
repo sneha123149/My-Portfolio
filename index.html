@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sneha Dutta - Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fdfdfd;
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: #6200ea;
+    }
+    .navbar-brand, .nav-link {
+      color: #fff !important;
+      font-weight: 600;
+    }
+    .nav-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #6200ea, #3700b3);
+      color: #fff;
+      padding: 5rem 1rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    /* Section headings */
+    section h2 {
+      color: #6200ea;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    /* Skills */
+    .skills li {
+      background: #f0f0f0;
+      padding: 0.8rem 1.2rem;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    .skills li:hover {
+      transform: scale(1.1);
+      background: #6200ea;
+      color: #fff;
+    }
+
+    /* Projects */
+    .project-card {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+    .project-card h5 {
+      color: #6200ea;
+      font-weight: 600;
+    }
+
+    /* Contact */
+    .contact input, .contact textarea {
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      padding: 0.8rem;
+    }
+    .contact button {
+      background: #6200ea;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 8px;
+      padding: 0.8rem;
+      transition: background 0.3s;
+    }
+    .contact button:hover {
+      background: #3700b3;
+    }
+
+    footer {
+      background: #f9f9f9;
+      padding: 1.5rem 0;
+      text-align: center;
+      color: #6200ea;
+      font-weight: 600;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Sneha Dutta</a>
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon bg-light rounded"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero animate__animated animate__fadeIn">
+    <div class="container">
+      <h1>Hello, I'm Sneha Dutta</h1>
+      <p>Web Developer | Designer | Programmer</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2>About Me</h2>
+      <p class="text-center">I specialize in creating beautiful, responsive websites that deliver excellent user experiences. With a strong foundation in web development and a passion for coding, I'm excited to bring your ideas to life!</p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-5 bg-light">
+    <div class="container">
+      <h2>Skills</h2>
+      <ul class="skills d-flex flex-wrap justify-content-center gap-3 list-unstyled">
+        <li>HTML</li><li>CSS</li><li>JavaScript</li>
+        <li>MongoDB</li><li>Express</li><li>React</li>
+        <li>Node.js</li><li>C</li><li>Python</li><li>Java</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects -->
+<section id="projects" class="py-5">
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="row g-4">
+      
+      <!-- Project 1 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card project-card h-100 text-center p-3">
+          <h5>Resume</h5>
+          <p>A personal Resume to showcase my projects and skills.</p>
+          <a href="resume.html" class="btn btn-sm btn-outline-primary" target="_blank">View Project</a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card project-card h-100 text-center p-3">
+          <h5>E-commerce Platform</h5>
+          <p>An online store for buying and selling products with a user-friendly interface.</p>
+          <a href="https://sneha123149.github.io/E-Commerce-Shop/" class="btn btn-sm btn-outline-primary" target="_blank">View Project</a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card project-card h-100 text-center p-3">
+          <h5>Form Handling</h5>
+          <p>A modern form handling project built with validations and UI enhancements.</p>
+          <a href="https://merry-cassata-01090c.netlify.app/" class="btn btn-sm btn-outline-primary" target="_blank">View Project</a>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card project-card h-100 text-center p-3">
+          <h5>CRUD Operation (React)</h5>
+          <p>A React-based CRUD application to manage data dynamically.</p>
+          <a href="https://papaya-sfogliatella-b9b56f.netlify.app/" class="btn btn-sm btn-outline-primary" target="_blank">View Project</a>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card project-card h-100 text-center p-3">
+          <h5>Concert</h5>
+          <p>A concert-themed website showcasing event details and design creativity.</p>
+          <a href="https://sneha123149.github.io/Concert/" class="btn btn-sm btn-outline-primary" target="_blank">View Project</a>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card project-card h-100 text-center p-3">
+          <h5>Durga Puja 2025 (Kolkata)</h5>
+          <p>A festival project website showcasing Durga Puja celebrations in Kolkata.</p>
+          <a href="https://sneha123149.github.io/Durga-Puja-2025-Kolkata" class="btn btn-sm btn-outline-primary" target="_blank">View Project</a>
+        </div>
+      </div>
+
+      <!-- Project 7 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card project-card h-100 text-center p-3">
+          <h5>Food Delivery</h5>
+          <p>A simple food delivery website with responsive design.</p>
+          <a href="https://sneha123149.github.io/Food-Delivery/" class="btn btn-sm btn-outline-primary" target="_blank">View Project</a>
+        </div>
+      </div>
+
+      <!-- Project 8 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card project-card h-100 text-center p-3">
+          <h5>Calculator</h5>
+          <p>A simple calculator built with JavaScript for quick calculations.</p>
+          <a href="https://sneha123149.github.io/Calculator/" class="btn btn-sm btn-outline-primary" target="_blank">View Project</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <h2>Contact</h2>
+      <form class="contact mx-auto" style="max-width: 600px;">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Sneha Dutta. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

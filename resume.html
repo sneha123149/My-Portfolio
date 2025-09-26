@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sneha Dutta - MERN Stack Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Base Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f4f4; /* Light background */
+      margin: 0;
+      padding: 0;
+      color: #333;
+      font-size: 14px; /* Adjusted base font size */
+    }
+
+    .resume {
+      display: flex;
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #fff;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      /* Removed border-radius */
+    }
+
+    /* Sidebar Styling (Left Column - Dark Blue) */
+    .sidebar {
+      width: 35%;
+      min-width: 250px;
+      background-color: #2F4F79; /* Dark Blue from image */
+      color: white;
+      padding: 0; /* Adjusted padding to fit the design */
+      box-sizing: border-box;
+    }
+
+    /* Orange accent strip at the top */
+    .sidebar::before {
+      content: '';
+      display: block;
+      background-color: #F87D34; /* Orange-red accent */
+      width: 100%;
+      height: 20px;
+    }
+
+    .profile-img {
+      padding: 30px 20px 10px;
+      text-align: center;
+    }
+
+    .profile-img img {
+      width: 150px; /* Reduced image size */
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #fff; /* White border */
+      margin-bottom: 10px;
+    }
+    
+    /* Name and Title in Sidebar */
+    .sidebar h1 {
+      font-size: 22px;
+      margin: 0 0 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    .sidebar .title {
+      font-size: 14px;
+      font-weight: 300;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .sidebar .section {
+      text-align: left;
+      margin-top: 15px;
+      padding: 0 20px;
+    }
+
+    .sidebar h2 {
+      font-size: 16px;
+      font-weight: 600;
+      color: white;
+      text-transform: uppercase;
+      margin-top: 15px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Lighter divider */
+    }
+
+    /* Section icon for sidebar */
+    .sidebar h2::before {
+      content: '▸'; /* Bullet point like in the image */
+      color: #F87D34;
+      margin-right: 8px;
+      font-size: 18px;
+      line-height: 0;
+      vertical-align: middle;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li,
+    .sidebar p {
+      font-size: 14px;
+      margin: 6px 0;
+    }
+    
+    .sidebar a {
+      color: #eee;
+      text-decoration: none;
+    }
+
+    /* Skill and Language Bar Styles (New structure needed in HTML to support this) */
+    .skill-item,
+    .language-item {
+      margin-bottom: 15px;
+    }
+
+    .skill-name,
+    .language-name {
+      font-weight: 500;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    .progress-bar {
+      height: 7px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 5px;
+    }
+
+    .progress-level {
+      height: 100%;
+      background: #F87D34; /* Orange-red fill */
+      border-radius: 5px;
+    }
+    
+    /* Reference Box Styling */
+    .reference-box {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+    }
+    .reference-box p {
+      margin: 3px 0;
+    }
+    .reference-box strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 3px;
+    }
+
+
+    /* Main Content Styling (Right Column) */
+    .main {
+      width: 65%;
+      padding: 30px 40px;
+      background: white;
+      box-sizing: border-box;
+    }
+    
+    /* Name and Title in Main section (for desktop) */
+    .main-header h1 {
+      font-size: 30px;
+      color: #333;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .main-header .title {
+      font-size: 16px;
+      font-weight: 300;
+      color: #555;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 15px;
+    }
+
+    .main .section {
+      margin-bottom: 25px;
+    }
+
+    .main h2 {
+      font-size: 18px;
+      color: #2F4F79;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+    
+    /* Section icon for main content */
+    .main h2::before {
+      content: '▸'; /* Bullet point like in the image */
+      color: #F87D34;
+      margin-right: 8px;
+      font-size: 20px;
+      line-height: 0;
+      vertical-align: middle;
+    }
+
+    .main p,
+    .main li {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    
+    .main ul {
+      list-style: disc; /* Use standard list style for bullet points */
+      padding-left: 20px;
+    }
+    .main ul li {
+      margin-bottom: 5px;
+    }
+
+    /* Education Table Styling */
+    .main table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    .main table th,
+    .main table td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    .main table th {
+      background: #f2f2f2;
+      color: #333;
+      font-weight: 600;
+    }
+    
+    /* Job/Experience Item Styling */
+    .job-item {
+      margin-bottom: 15px;
+    }
+    .job-item p {
+      margin: 0;
+    }
+    .job-title {
+      font-weight: 600;
+      color: #333;
+      font-size: 15px;
+    }
+    .job-details {
+      color: #555;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+    .date-range {
+      float: right;
+      color: #F87D34;
+      font-weight: 500;
+      font-size: 13px;
+    }
+
+    /* Interests Section */
+    .interests-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    
+    .interest-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+    }
+    
+    .interest-icon {
+      font-size: 20px;
+      color: #F87D34; /* Orange icon */
+      margin-bottom: 5px;
+    }
+
+
+    /* --- Phone Mode Responsiveness (Your existing code preserved) --- */
+    @media (max-width: 768px) {
+      .resume {
+        flex-direction: column;
+        max-width: 100%;
+        margin: 0;
+        box-shadow: none;
+      }
+
+      .sidebar,
+      .main {
+        width: 100%;
+        padding: 20px;
+      }
+      
+      .main {
+        border-top: 2px solid #ddd;
+      }
+
+      .profile-img img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .sidebar h1 {
+        font-size: 20px;
+      }
+
+      .sidebar .title {
+        font-size: 14px;
+      }
+
+      .main-header h1 {
+        font-size: 20px;
+      }
+      
+      .main h2 {
+        font-size: 16px;
+      }
+
+      .main p,
+      .main li,
+      .main table,
+      .main table th,
+      .main table td {
+        font-size: 13px; /* Slightly smaller font for phone */
+      }
+      
+      .date-range {
+        float: none;
+        display: block;
+        margin-top: 5px;
+      }
+      
+      /* Hide name/title in sidebar on mobile since it's in the main section */
+      .sidebar h1, .sidebar .title {
+        display: none;
+      }
+      
+      /* Ensure full width table on mobile */
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      
+      .interests-grid {
+        gap: 15px;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="resume">
+    <div class="sidebar">
+      <div class="profile-img">
+        <img src="pic.jpeg" alt="Profile Picture">
+      </div>
+      <h1>Sneha Dutta</h1>
+      <p class="title">MERN Stack Developer</p>
+
+      <div class="section contact-info">
+        <h2>Contact</h2>
+        <p><i class="fas fa-map-marker-alt" style="margin-right: 5px;"></i> Chandannagar, India</p>
+        <p><i class="fas fa-phone" style="margin-right: 5px;"></i> +91-6291186429</p>
+        <p><i class="fas fa-envelope" style="margin-right: 5px;"></i> <a href="mailto:duttasneha655@gmail.com" style="color: white;">duttasneha655@gmail.com</a></p>
+        <p><i class="fab fa-github" style="margin-right: 5px;"></i> <a href="https://github.com/sneha123149" target="_blank" style="color: white;">github.com/sneha123149</a></p>
+      </div>
+
+      <div class="section skills-info">
+        <h2>Pro Skills</h2>
+        <div class="skill-item">
+          <div class="skill-name">MERN Stack</div>
+          <div class="progress-bar"><div class="progress-level" style="width: 80%;"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">HTML, CSS, JS</div>
+          <div class="progress-bar"><div class="progress-level" style="width: 80%;"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">React, Redux</div>
+          <div class="progress-bar"><div class="progress-level" style="width: 75%;"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">Java, Python, C</div>
+          <div class="progress-bar"><div class="progress-level" style="width: 70%;"></div></div>
+        </div>
+      </div>
+
+      <div class="section language-info">
+        <h2>Language</h2>
+        <div class="language-item">
+          <div class="language-name">English</div>
+          <div class="progress-bar"><div class="progress-level" style="width: 80%;"></div></div>
+        </div>
+        <div class="language-item">
+          <div class="language-name">Hindi</div>
+          <div class="progress-bar"><div class="progress-level" style="width: 95%;"></div></div>
+        </div>
+        <div class="language-item">
+          <div class="language-name">Bengali</div>
+          <div class="progress-bar"><div class="progress-level" style="width: 100%;"></div></div>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div class="main">
+      <div class="main-header">
+        <h1>Sneha Dutta</h1>
+        <p class="title">MERN Stack Developer</p>
+      </div>
+
+      <div class="section">
+        <h2>Profile</h2>
+        <p>Proficient in full-stack web development using the MERN stack. Comfortable with REST API integration, version control (Git), responsive UI design, and debugging. Also experienced in Java, Python, and C. Passionate about learning and solving real-world problems through code, aspiring to build modern, responsive web applications while contributing to impactful projects in a collaborative team.</p>
+      </div>
+
+      <div class="section">
+        <h2>Education</h2>
+        <table style="width:100%; border-collapse: collapse;">
+          <tr style="background:#f2f2f2;">
+            <th>Course</th>
+            <th>Institution</th>
+            <th>Year</th>
+            <th>Result</th>
+          </tr>
+          <tr>
+            <td>Diploma in CST</td>
+            <td>Bardhaman University</td>
+            <td>2024–2026</td>
+            <td>GPA: 9.0</td>
+          </tr>
+          <tr>
+            <td>12th (Science)</td>
+            <td>Krishna Bhabini Nari Siksha Mandir</td>
+            <td>2024</td>
+            <td>82.8%</td>
+          </tr>
+          <tr>
+            <td>10th</td>
+            <td>Chinsurah Balika Bani Mandir</td>
+            <td>2022</td>
+            <td>81.29%</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="section">
+        <h2>Work Experience</h2>
+        <div class="job-item">
+          <span class="date-range">Jan 2025 – Present</span>
+          <p class="job-title">MERN Stack Intern – APTECH</p>
+          <ul>
+            <li>Built and deployed full-stack apps using React, Node, and MongoDB</li>
+            <li>Collaborated on team projects and used Git & GitHub for version control</li>
+            <li>Used tools like Postman, VS Code, and Chrome DevTools for development</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Projects</h2>
+        <div class="job-item">
+          <p class="job-title">E-Commerce Shop</p>
+          <p class="job-details">🔗 <a href="https://sneha123149.github.io/E-Commerce-Shop/" target="_blank">GitHub Link</a></p> 
+        </div>
+        <div class="job-item">
+          <p class="job-title">CRUD Operation with REACT</p>
+          <p class="job-details">🔗 <a href="https://papaya-sfogliatella-b9b56f.netlify.app/" target="_blank">Netlify Link</a></p>
+        </div>
+        <div class="job-item">
+          <p class="job-title">Form Handling</p>
+          <p class="job-details">🔗 <a href="https://merry-cassata-01090c.netlify.app/" target="_blank">Netlify Link</a></p>
+        </div>
+        <div class="job-item">
+          <p class="job-title">Concert</p>
+          <p class="job-details">🔗 <a href="https://sneha123149.github.io/Concert/" target="_blank">Github Link</a></p>
+        </div>
+        <div class="job-item">
+          <p class="job-title">Food Delivery</p>
+          <p class="job-details">🔗 <a href="https://sneha123149.github.io/Food-Delivery/" target="_blank">Github Link</a></p>
+        </div>
+        <div class="job-item">
+          <p class="job-title">Durga Puja 2025 at Kolkata</p>
+          <p class="job-details">🔗 <a href="https://sneha123149.github.io/Durga-Puja-2025-Kolkata" target="_blank">Github Link</a></p>
+        </div>
+        <div class="job-item">
+          <p class="job-title">Calculator</p>
+          <p class="job-details">🔗 <a href="https://sneha123149.github.io/Calculator/" target="_blank">GitHub Link</a></p>
+        </div>
+        </div>
+
+      <div class="section">
+        <h2>Certifications</h2>
+        <ul>
+          <li>MERN Stack – APTACH CHINSURAH (Ongoing, completes Jan 2026)</li>
+          <li>C & JAVA – APTACH CHINSURAH (2024)</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Hobbies & Soft Skills</h2>
+        <div class="interests-grid">
+          <div class="interest-item">
+            <span class="interest-icon"><i class="fas fa-plane-departure"></i></span>
+            Travel
+          </div>
+          <div class="interest-item">
+            <span class="interest-icon"><i class="fas fa-users"></i></span>
+            Teamwork
+          </div>
+          <div class="interest-item">
+            <span class="interest-icon"><i class="fa-solid fa-bolt"></i></i></span>
+            Dance
+          </div>
+          <div class="interest-item">
+            <span class="interest-icon"><i class="fas fa-brain"></i></span>
+            Problem Solving
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
